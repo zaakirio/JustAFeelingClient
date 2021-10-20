@@ -5,16 +5,16 @@ import Register from "./components/auth/Register";
 import Customers from "./components/customers/Customers";
 import Navbar from "./components/layout/Navbar";
 import AuthContext from "./context/AuthContext";
+import Home from "./components/layout/Home";
 
 function Router() {
   const { loggedIn } = useContext(AuthContext);
 
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
         <Route exact path="/">
-          <div>Home</div>
+        <Home />
         </Route>
         {loggedIn === false && (
           <>

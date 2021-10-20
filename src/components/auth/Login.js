@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const { getLoggedIn } = useContext(AuthContext);
@@ -15,15 +15,12 @@ function Login() {
 
     try {
       const loginData = {
-        email,
+        username,
         password,
       };
 
-      // await axios.post("http://localhost:5000/auth/login", loginData);
-      await axios.post(
-        "https://mern-auth-template-tutorial.herokuapp.com/auth/login",
-        loginData
-      );
+      await axios.post("http://localhost:5000/auth/login", loginData);
+
       await getLoggedIn();
       history.push("/");
     } catch (err) {
@@ -35,11 +32,12 @@ function Login() {
     <div>
       <h1>Log in to your account</h1>
       <form onSubmit={login}>
+        <div class="con">
         <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
+          type="username"
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
         />
         <input
           type="password"
@@ -48,6 +46,7 @@ function Login() {
           value={password}
         />
         <button type="submit">Log in</button>
+        </div>
       </form>
     </div>
   );

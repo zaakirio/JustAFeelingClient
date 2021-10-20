@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 function Register() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordVerify, setPasswordVerify] = useState("");
 
@@ -16,16 +16,13 @@ function Register() {
 
     try {
       const registerData = {
-        email,
+        username,
         password,
         passwordVerify,
       };
 
-      // await axios.post("http://localhost:5000/auth/", registerData);
-      await axios.post(
-        "https://mern-auth-template-tutorial.herokuapp.com/auth/",
-        registerData
-      );
+       await axios.post("http://localhost:5000/auth/", registerData);
+
       await getLoggedIn();
       history.push("/");
     } catch (err) {
@@ -38,10 +35,10 @@ function Register() {
       <h1>Register a new account</h1>
       <form onSubmit={register}>
         <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
+          type="username"
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
         />
         <input
           type="password"
