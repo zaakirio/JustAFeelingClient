@@ -1,13 +1,15 @@
-import './App.css';
-import Login from './components/Login'
+import React from "react";
+import Router from "./Router";
+import axios from "axios";
+import { AuthContextProvider } from "./context/AuthContext";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <Login/>
-      </header>
-    </div>
+    <AuthContextProvider>
+      <Router />
+    </AuthContextProvider>
   );
 }
 
