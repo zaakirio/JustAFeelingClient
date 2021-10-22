@@ -17,7 +17,7 @@ function Navbar() {
       )}
       {loggedIn === true && (
         <>
-          <Link to="/customer">Customers</Link>
+          <Link to="/feeling">Feelings</Link>
           <LogOutBtn />
         </>
       )}

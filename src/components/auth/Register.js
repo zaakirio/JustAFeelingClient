@@ -10,7 +10,6 @@ function Register() {
 
   const { getLoggedIn } = useContext(AuthContext);
   const history = useHistory();
-
   async function register(e) {
     e.preventDefault();
 
@@ -24,7 +23,7 @@ function Register() {
        await axios.post("http://localhost:5000/auth/", registerData);
 
       await getLoggedIn();
-      history.push("/");
+      history.push("/feelings");
     } catch (err) {
       console.error(err);
     }

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import Customers from "./components/customers/Customers";
+import Feelings from "./components/feelings/Feelings";
 import Navbar from "./components/layout/Navbar";
 import AuthContext from "./context/AuthContext";
 import Home from "./components/layout/Home";
@@ -28,8 +28,9 @@ function Router() {
         )}
         {loggedIn === true && (
           <>
-            <Route path="/customer">
-              <Customers />
+              <Navbar/>
+            <Route path="/feeling">
+              <Feelings />
             </Route>
           </>
         )}

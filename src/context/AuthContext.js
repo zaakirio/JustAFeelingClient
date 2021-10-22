@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
-
+import Navbar from "../components/layout/Navbar";
 const AuthContext = createContext();
 
 function AuthContextProvider(props) {
@@ -18,7 +18,7 @@ function AuthContextProvider(props) {
 
   return (
     <AuthContext.Provider value={{ loggedIn, getLoggedIn }}>
-      {props.children}
+      {props.children}      
     </AuthContext.Provider>
   );
 }
