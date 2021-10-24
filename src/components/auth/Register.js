@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import "../../styles/Login.css";
+
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -23,16 +25,16 @@ function Register() {
        await axios.post("http://localhost:5000/auth/", registerData);
 
       await getLoggedIn();
-      history.push("/feelings");
+      history.push("/feeling");
     } catch (err) {
       console.error(err);
     }
   }
 
   return (
-    <div>
+    <div class="container">
+      <form onSubmit={register} class= "login">
       <h1>Register a new account</h1>
-      <form onSubmit={register}>
         <input
           type="username"
           placeholder="Username"

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import "../../styles/Login.css";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -30,12 +31,11 @@ function Login() {
 
   return (
     <div>
-      <h1>Log in to your account</h1>
-      <form onSubmit={login}>
-        <div class="con">
+      <form onSubmit={login} class="login" >
+       <h1>Log in to your account</h1>
         <input
           type="username"
-          placeholder="username"
+          placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
@@ -46,7 +46,6 @@ function Login() {
           value={password}
         />
         <button type="submit">Log in</button>
-        </div>
       </form>
     </div>
   );
