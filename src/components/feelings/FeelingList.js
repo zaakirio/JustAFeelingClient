@@ -15,3 +15,4 @@ function FeelingList({ feelings }) {
 }
 
 export default FeelingList;
+//add auto expire- add a feeliung, but also let it self destruct in an hour..days..etc
