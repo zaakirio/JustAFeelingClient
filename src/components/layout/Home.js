@@ -1,7 +1,19 @@
 import "../../styles/Home.scss";
-
+import "../../styles/Button.css";
 function Home() {
+//add sign up button
+//add login button
   return (
+    <div>
+    <div id = "outer">
+      <h1 id = "inner"> Just A Feeling </h1>
+      </div>
+      <p id = "inner"> A letter to the self...</p>
+      
+      <div>
+    <button class="custom-btn btn-5"><span>Sign Up</span></button>
+  <button class="custom-btn btn-5"><span>Log In</span></button>
+    </div>
 <div class="illustration"> 
   <div class="yogi-lady">
     <div class="breath">
@@ -44,6 +56,7 @@ function Home() {
       </div>
     </div>
   </div>
+</div>
 </div>
   );
 }
