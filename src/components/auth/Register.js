@@ -40,18 +40,25 @@ function Register() {
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
+          minLength="4" 
+          maxLength="12"
+          
         />
         <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          minLength="8" 
+          maxLength="50"
         />
         <input
           type="password"
           placeholder="Verify your password"
           onChange={(e) => setPasswordVerify(e.target.value)}
           value={passwordVerify}
+          minLength="8" 
+          maxLength="50"
         />
         <button type="submit">Register</button>
       </form>

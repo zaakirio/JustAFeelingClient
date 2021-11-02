@@ -1,19 +1,26 @@
 import "../../styles/Home.scss";
 import "../../styles/Button.css";
+import {useHistory} from "react-router-dom";
+
 function Home() {
-//add sign up button
-//add login button
+
+
+
+  const history = useHistory();
+
+
+
   return (
+    
     <div>
-    <div id = "outer">
+      <div class="container">
+      <button class="custom-btn btn-5 topright" onClick={()=>{history.push('/register')}} ><span>Sign Up</span></button>
+        <button class="custom-btn btn-5 topleft" onClick={()=>{history.push('/login')}}><span>Login</span></button>
+  </div>
+  <div id = "outer">
       <h1 id = "inner"> Just A Feeling </h1>
-      </div>
-      <p id = "inner"> A letter to the self...</p>
-      
-      <div>
-    <button class="custom-btn btn-5"><span>Sign Up</span></button>
-  <button class="custom-btn btn-5"><span>Log In</span></button>
     </div>
+
 <div class="illustration"> 
   <div class="yogi-lady">
     <div class="breath">
@@ -24,7 +31,7 @@ function Home() {
       <span class="text inhale-text">just</span>
       <span class="text hold1-text">a</span>
       <span class="text exhale-text">feeling</span>
-      <span class="text hold2-text">a</span>
+      <span class="text hold2-text"></span>
     </div>
     <div class="hair">
       <div class="face-up">      
