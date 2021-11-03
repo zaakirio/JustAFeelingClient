@@ -34,7 +34,7 @@ function FeelingForm({ getFeelings }) {
             setFeeling(e.target.value);
           }}
           value={feelingName}
-          minLength="50" 
+          minLength="8" 
           maxLength="500"
         />
         <button type="submit">Save new feeling</button>
