@@ -7,14 +7,14 @@ function Feelings() {
   const [feelings, setFeelings] = useState([]);
 
   async function getFeelings() {
-    const feelingsRes = await axios.get("http://localhost:5000/feelings/");
+    const feelingsRes = await axios.get("http://localhost:5000/feeling/");
 
     setFeelings(feelingsRes.data);
   }
 
-  // useEffect(() => {
-  //   getFeelings();
-  // }, []);
+  useEffect(() => {
+    getFeelings();
+  }, []);
 
   return (
     <div>

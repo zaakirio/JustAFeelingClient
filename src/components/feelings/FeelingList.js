@@ -3,7 +3,7 @@ import React from "react";
 function FeelingList({ feelings }) {
   function renderFeelings() {
     return feelings.map((feeling, i) => {
-      return <li key={i}>{feeling.name}</li>;
+      return <li key={i}>{feeling.feeling}</li>;
     });
   }
 
